@@ -40,7 +40,7 @@ DJANGO_APPS = [
 ]
 
 PROJECT_APPS = [
-    "users.apps.UsersConfig",
+    "users.apps.UsersConfig",  # users > apps 경로의 UsersConfig를 사용
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
