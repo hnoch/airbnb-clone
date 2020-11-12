@@ -45,6 +45,11 @@ PROJECT_APPS = [
     "core.apps.CoreConfig",
     "users.apps.UsersConfig",  # users > apps 경로의 UsersConfig를 사용
     "rooms.apps.RoomsConfig",
+    "reviews.apps.ReviewsConfig",
+    "reservations.apps.ReservationsConfig",
+    "lists.apps.ListsConfig",
+    "conversations.apps.ConversationsConfig",
+
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
