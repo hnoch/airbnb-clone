@@ -36,7 +36,8 @@ class User(AbstractUser):
         (CURRENCY_KRW, "KRW")
     )
 
-    avatar = models.ImageField(blank=True)                     # 프로필사진
+    avatar = models.ImageField(
+        upload_to="avatars", blank=True)                     # 프로필사진
     gender = models.CharField(
         choices=GENDER_CHOICES, max_length=10,  blank=True)    # 성별   10자, null 허용
     bio = models.TextField(blank=True)  # 바이오그래피 - 간략 소개
