@@ -1,5 +1,6 @@
-import os
+
 from django.db import models
+from django.urls import reverse
 from django_countries.fields import CountryField
 from core import models as core_models
 from users import models as user_models     # host필드 > user에서 외래키 가져오기 위함
@@ -100,6 +101,9 @@ class Room(core_models.TimeStampedModel):   # core의 타임스탬프 모델을 
     def save(self, *args, **kwargs):
         self.city = str.capitalize(self.city)   # 도시 영문 대문자 변환
         super().save(*args, **kwargs)
+
+    def get_absolute_url(self):     # admin 페이지에서 view on site 했을 경우 프론트로 페이지 이동
+        return reverse("rooms:detail", kwargs={"pk": self.pk})
 
     def total_rating(self):
         all_reviews = self.reviews.all()

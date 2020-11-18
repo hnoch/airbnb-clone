@@ -1,0 +1,38 @@
+{% extends "base.html" %} 
+{%block page_title %} 
+    Home 
+{%endblock page_title %}
+
+{%block content %} 
+
+    {{now}} 
+
+    {% for room in rooms %}
+
+    <h3>
+        <!-- <a href="/rooms/{{room.pk}}"> -->
+            <a href="{% url "rooms:detail" room.pk %}">
+            {{room.name}} / ${{room.price}}
+        </a>
+    </h3>
+
+
+
+    {% endfor %}
+
+    <h5>
+    <!-- has_previous : 이전 페이지가 있으면 참 반환 -->
+    {% if page_obj.has_previous %}
+    <!-- previous_page_number : 이전 페이지 숫자 반환 -->
+    <a href="?page={{page_obj.previous_page_number}}">Previous</a>
+    {% endif %}
+    <!-- number : 현재 있는 페이지 번호 , num_pages : 총 페이지 수 -->
+    Page {{page_obj.number}} of {{page_obj.paginator.num_pages}}
+    <!-- has_next : 다음 페이지가 있으면 참 반환 -->
+    {% if page_obj.has_next %}
+    <!-- next_page_number : 다음 페이지 숫자 반환 -->
+    <a href="?page={{page_obj.next_page_number}}">Next</a>
+    {% endif %}
+    </h5>
+
+{%endblock content %}

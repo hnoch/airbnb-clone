@@ -34,7 +34,7 @@ class RoomAdmin(admin.ModelAdmin):
         (
             "Basic Info",
             {"fields": ("name", "description",
-                        "country", "address", "price")}
+                        "country", "city", "address", "price", "room_type")}
         ),  # 항상 맨끝 콤마 필수!
         (
             "Times",
