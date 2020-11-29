@@ -9,7 +9,8 @@
 {% block content %}
     <h2>search!</h2>
     <form method="get" action="{% url "rooms:search" %}">
-        <div>
+        <!-- ~#13.6 -->
+        <!-- <div>
             <label for="city">City</label>
             <input id="city" name="city" value="{{city}}" placeholder="Search by City" />
         </div>
@@ -50,14 +51,12 @@
             <label for="baths">Baths</label>
             <input value="{{baths}}" type="number" name="baths" id="baths" placeholder="Baths"/>
         </div>
-        <!-- 임시예약 -->
         <div>
             <label for="instant">Instant Book Only?</label>
             <input type="checkbox" name="instant" id="instant" {% if instant %}
             checked
             {% endif %}/>
         </div>
-        <!-- superhost -->
         <div>
             <label for="superhost">By superhost Only?</label>
             <input type="checkbox" name="superhost" id="superhost"{% if superhost %}
@@ -101,7 +100,10 @@
                     </li>
                 {% endfor %}
             </ul>
-        </div>
+        </div> -->
+
+        {{form.as_p}}
+
         <button>Search</button>
     </form>
 
