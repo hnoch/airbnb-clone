@@ -5,5 +5,5 @@
   "python.linting.enabled": true,
   "python.linting.flake8Args": ["--max-line-length==88"],
   "editor.formatOnSave": true,
-  "workbench.colorTheme": "Monokai"
+  "workbench.colorTheme": "Sublime Material Theme - Dark"
 }

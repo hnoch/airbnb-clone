@@ -24,7 +24,8 @@ class CustomUserAdmin(UserAdmin):
                     "birthdate",
                     "language",
                     "currency",
-                    "superhost"
+                    "superhost",
+                    "login_method",
                 )
             }
         ),
@@ -45,7 +46,9 @@ class CustomUserAdmin(UserAdmin):
         "superhost",
         "is_staff",
         "is_superuser",
-
+        "email_verified",
+        "email_secret",
+        "login_method",
     )
 # 3.4
 # # admin.site.register(models.User, CustomUserAdmin)
